@@ -2,9 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Build & Unit Test') {
+        stage('Unit Tests') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn -Dtest=HelloTest test'
+            }
+        }
+
+        stage('Integration Tests') {
+            steps {
+                sh 'mvn -Dtest=IntegrationTest test'
+            }
+        }
+
+        stage('UI Tests') {
+            steps {
+                sh 'mvn -Dtest=UiSimulationTest test'
             }
         }
 
