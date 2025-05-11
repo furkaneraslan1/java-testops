@@ -25,6 +25,13 @@ pipeline {
                 sh 'groovy src/main/groovy/com/testops/XmakeLogAnalyzer.groovy'
             }
         }
+
+        stage('Generate QA Summary') {
+            steps {
+                sh 'groovy scripts/test_summary.groovy'
+            }
+        }
+
     }
 
     post {
