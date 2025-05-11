@@ -32,6 +32,11 @@ pipeline {
             }
         }
 
+        stage('Generate HTML Report') {
+            steps {
+                sh 'groovy scripts/summary_to_html.groovy'
+            }
+        }
     }
 
     post {
