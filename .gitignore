@@ -20,6 +20,5 @@ Thumbs.db
 mvnw
 mvnw.cmd
 
-# ===== Secrets & Reports =====
-secrets/secrets.json
+# ===== Reports =====
 reports/test_summary.json
