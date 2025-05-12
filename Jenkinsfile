@@ -42,6 +42,7 @@ pipeline {
     post {
         always {
             junit '**/target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: 'reports/test_summary.html', fingerprint: true
         }
     }
 }
