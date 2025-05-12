@@ -37,6 +37,12 @@ pipeline {
                 sh 'groovy scripts/summary_to_html.groovy'
             }
         }
+
+        stage('Rotate Service Account Passwords') {
+            steps {
+                sh 'groovy scripts/password_rotator.groovy'
+            }
+        }
     }
 
     post {
